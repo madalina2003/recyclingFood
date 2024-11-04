@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Recycling Game</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <h1>Food Recycling Game</h1>
+    <div class="game-container">
+        <div class="bins">
+            <div class="bin" id="compost-bin">Compost Bin</div>
+            <div class="bin" id="recycle-bin">Recycle Bin</div>
+            <div class="bin" id="trash-bin">Trash Bin</div>
+        </div>
+        <div class="items">
+            <div class="item" draggable="true" data-bin="compost">Banana Peel</div>
+            <div class="item" draggable="true" data-bin="recycle">Plastic Bottle</div>
+            <div class="item" draggable="true" data-bin="trash">Candy Wrapper</div>
+        </div>
+    </div>
+    <p id="score">Score: 0</p>
+    <script src="recycle.js"></script>
+</body>
+</html>
