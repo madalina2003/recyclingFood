@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How well can you sort waste? - Level 2</title>
+  <link rel="stylesheet" href="FoodWaste.css">
+</head>
+<body>
+<h1>How well can you sort waste? - Level 2</h1>
+
+<!-- Game Controls -->
+<div id="game-controls">
+  <button id="start-game-button" onclick="startGame()">Start Game</button>
+  <a href="HomePage.html">
+    <button id="home-button">Back to Home</button>
+  </a>
+</div>
+
+<!-- Timer and Score -->
+<div id="game-info">
+  <div id="score">Score: 0 Correct, 0 Wrong</div>
+  <div id="timer">Time Left: 2:00</div>
+</div>
+
+<!-- Bins and Items -->
+<div id="game-content">
+  <div class="bins">
+    <div class="bin" id="compost-bin" data-type="compost" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <span>Compost</span>
+    </div>
+    <div class="bin" id="recycle-bin" data-type="recycle" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <span>Recycle</span>
+    </div>
+    <div class="bin" id="trash-bin" data-type="trash" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <span>Trash</span>
+    </div>
+  </div>
+
+  <div class="items">
+    <div class="item-container" id="item2-container" onclick="breakDown(event, 'item2')">
+      <img class="base-image" src="chipsInContainer.png" alt="chips Box" />
+      <div class="components hidden"></div>
+    </div>
+    <div class="item-container" id="item3-container" onclick="breakDown(event, 'item3')">
+      <img class="base-image" src="chickenRoll.png" alt="chicken roll" />
+      <div class="components hidden"></div>
+    </div>
+    <div class="item-container" id="item4-container" onclick="breakDown(event, 'item4')">
+      <img class="base-image" src="sausage+fork.png" alt="sausage and fork" />
+      <div class="components hidden"></div>
+    </div>
+    <div class="item-container" id="item5-container" onclick="breakDown(event, 'item5')">
+      <img class="base-image" src="madeMeal.png" alt="meal in container" />
+      <div class="components hidden"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Congratulations Modal -->
+<div id="congratulations-modal" style="display: none;">
+  <div>
+    <h2>Congratulations!</h2>
+    <p>You sorted all items correctly in Level 2! Great job!</p>
+    <ul style="list-style-type: none; padding: 0; margin: 0;">
+      <li><strong>Correct Answers:</strong> <span id="results-correct"></span></li>
+      <li><strong>Incorrect Answers:</strong> <span id="results-incorrect"></span></li>
+      <li><strong>Percentage Correct:</strong> <span id="results-percentage"></span>%</li>
+      <li><strong>Time Taken:</strong> <span id="results-time"></span></li>
+    </ul>
+    <button id="close-congratulations-btn">Close</button>
+  </div>
+</div>
+<!-- Wrong Answer Modal -->
+<div id="wrong-modal" style="display: none;">
+  <div>
+    <h2>Oops! Wrong bin.</h2>
+    <p id="wrong-message"></p>
+    <button id="close-wrong-btn">×</button>
+  </div>
+</div>
+
+<script src="level2.js"></script>
+</body>
+</html>

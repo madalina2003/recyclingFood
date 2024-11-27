@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How well can you sort waste?</title>
+  <link rel="stylesheet" href="FoodWaste.css">
+</head>
+<body>
+  <h1>How well can you sort waste?</h1>
+  <p>HOLD + drag the items into the correct bin:</p>
+
+  <!-- Start Game Section -->
+  <div id="start-container">
+    <button id="start-button" class="button">Start Game</button>
+    <a href="HomePage.html"> <button id="start-button" class="button">Back to Homepage</button></a>
+  </div>
+
+  <!-- Timer and Score -->
+  <div id="game-info" style="display: none;">
+    <div id="score">Score: 0 Correct, 0 Wrong</div>
+    <div id="timer">Time Left: 2:00</div>
+  </div>
+
+  <!-- Bins and Items -->
+  <div id="game-content" style="display: none;">
+    <div class="bins">
+      <div class="bin" id="compost-bin" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <span>Compost</span>
+      </div>
+      <div class="bin" id="recycle-bin" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <span>Recycle</span>
+      </div>
+      <div class="bin" id="trash-bin" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <span>Trash</span>
+      </div>
+    </div>
+
+    <div class="items">
+      <div class="item" id="item1" draggable="true" data-type="compost" ondragstart="drag(event)"> <img src="bananapeel.png" alt="Banana" /></div>
+      <div class="item" id="item2" draggable="true" data-type="trash" ondragstart="drag(event)"><img src="juicybox.png" alt="juicybox"/> </div>
+      <div class="item" id="item3" draggable="true" data-type="compost" ondragstart="drag(event)"><img src="bread.png" alt="bread"/></div>
+      <div class="item" id="item4" draggable="true" data-type="recycle" ondragstart="drag(event)"><img src="cardboard.png" alt="cardboard"/> </div>
+      <div class="item" id="item5" draggable="true" data-type="compost" ondragstart="drag(event)"><img src="orange.png"alt="orange"/> </div>
+      <div class="item" id="item6" draggable="true" data-type="recycle" ondragstart="drag(event)"><img src="plasticfork.png" alt="plasticfork"/></div>
+    </div>
+  </div>
+
+  <!-- Modals -->
+  <div id="congratulations-modal" style="display: none;">
+    <div>
+      <h2>Congratulations!</h2>
+      <p>You completed Level 1! Are you ready for Level 2?</p>
+      <a href="level2.html"><button>Proceed to Level 2</button></a>
+      <a href="HomePage.html"><button>Back to Homepage</button></a>
+    </div>
+  </div>
+
+
+
+  <div id="wrong-modal" style="display: none;">
+    <div>
+      <button id="close-wrong-btn" class="close-btn" disabled onclick="closeWrongModal()">×(6s)s</button>
+      <h2>Oops!</h2>
+      <p id="wrong-message"></p>
+    </div>
+  </div>
+
+  <!-- Game Over Modal -->
+  <div id="game-over-modal" style="display: none;">
+    <div>
+      <h2>Time's Up!</h2>
+      <p>Your final score is: <span id="final-score"></span></p>
+      <button onclick="resetGame()">Play Again</button>
+      <a href="HomePage.html"><button>Back to Homepage</button></a>
+    </div>
+  </div>
+
+
+
+  <script src="FoodWaste.js"></script>
+</body>
+</html>
